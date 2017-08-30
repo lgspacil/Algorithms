@@ -1,0 +1,17 @@
+<script>
+
+function removeAt(array, index){
+	for (var i = index; i < array.length; i++){
+		array[i] = array[i+1];
+	}
+
+	array.length = array.length -1 ;
+	return array;
+
+}
+
+
+console.log(removeAt([1,2,3,4,5], 2))
+
+
+</script>

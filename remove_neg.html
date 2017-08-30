@@ -1,0 +1,19 @@
+<script>
+
+function remove_neg(array){
+	j = 0
+	for (var i = 0; i < array.length; i++){
+		if (array[i] > 0){
+			array[j] = array[i]
+			j++
+		}
+	}
+	array.length = j
+	return array
+}
+
+
+console.log(remove_neg([1,2,-4,6,7,9,-2,-3,6,-11]))
+
+
+</script>

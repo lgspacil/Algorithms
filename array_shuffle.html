@@ -1,0 +1,19 @@
+<script>
+
+
+
+function randomArray(arr){
+	for (var i = 0; i < (arr.length); i++){
+		var randNum = Math.floor(Math.random()*arr.length);
+		var temp = arr[i];
+		arr[i] = arr[randNum];
+		arr[randNum] = temp;
+	}
+	return arr;
+}
+
+console.log(randomArray([1,2,3,4,5,6,7,8,9]))
+
+
+
+</script>

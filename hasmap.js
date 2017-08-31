@@ -64,15 +64,15 @@ HashTable.prototype.resize = function(newMax){
 
 	for (var i = 0; i < oldStorage.length; i++){
 		//if there is nothing in this container we can move on
-		if(!oldStorage[i]){
-			return;
-		}
-
-		//this is when you find something in the container
-		// go through it and re-insert it using the new length
-		for(var x = 0; x < oldStorage[i].length; x++){
-			var tuple = oldStorage[i][x];
-			this.insert(tuple[0], tuple[1]);
+		//if there is something we have to take a look
+		if(oldStorage[i] != undefined){
+			
+			//this is when you find something in the container
+			// go through it and re-insert it using the new length
+			for(var j = 0; j < oldStorage[i].length; j++){
+				var tupal = oldStorage[i][j];
+				this.insert(tupal[0], tupal[1]);
+			}
 		}
 	}
 }
@@ -131,6 +131,9 @@ table.insert("Monika", 28);
 table.insert("Martha", 56);
 table.insert("Lucas", 900);
 table.insert("Miro", 61);
+table.insert("John", 61);
+table.insert("mark", 61);
+table.insert("Francie", 61);
 
 console.log(table.storage);
 console.log(table.size);

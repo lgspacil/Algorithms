@@ -81,6 +81,21 @@ LinkedList.prototype.remove = function(val) {
   prev.next = curr.next;
 };
 
+LinkedList.prototype.reverse = function() {
+  var current = this.head;
+  var prev = null;
+  var next;
+
+  while(current != null){
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  this.head = prev;
+}
+
 LinkedList.prototype.print = function() {
   var output = '[';
   var current = this.head;
@@ -97,6 +112,25 @@ LinkedList.prototype.print = function() {
   console.log(output);
 };
 
+
+//PRINTING THE NODES WITH RECURSION
+LinkedList.prototype.printRec = function(node){
+  if(node == null){
+    return
+  }
+  console.log(node.data);
+  list.printRec(node.next);
+};
+
+//printing the node in reverse order with recursion
+LinkedList.prototype.printRec_reverse = function(node){
+  if(node == null){
+    return
+  }
+  list.printRec_reverse(node.next);
+  console.log(node.data);
+}
+
 // Testing our linked list
 var list = new LinkedList();
 list.append(10);
@@ -106,15 +140,23 @@ list.append(25);
 list.prepend(5);
 list.print(); // [5, 10, 15, 20, 25]
 
-console.log('\nRemoving 20 from our list:');
-list.remove(20);
-list.print(); // [5, 10, 15, 25]
+console.log("printing with recursion");
+list.printRec_reverse(list.head);
 
-console.log('\nSize of list:');
-console.log(list.size()); // 4
+// console.log('\nReversing the list..')
+// list.reverse();
 
-console.log('\nIs 10 in our list?');
-console.log(list.contains(10)); // True
+// list.print();
 
-console.log('\nIs 20 in our list?');
-console.log(list.contains(20)); // False
+// console.log('\nRemoving 20 from our list:');
+// list.remove(20);
+// list.print(); // [5, 10, 15, 25]
+
+// console.log('\nSize of list:');
+// console.log(list.size()); // 4
+
+// console.log('\nIs 10 in our list?');
+// console.log(list.contains(10)); // True
+
+// console.log('\nIs 20 in our list?');
+// console.log(list.contains(20)); // False

@@ -139,9 +139,13 @@ list.append(20);
 list.append(25);
 list.prepend(5);
 list.print(); // [5, 10, 15, 20, 25]
+list.reverse();
+list.print();
+console.log(list.contains(10));
+console.log(list.isEmpty());
 
-console.log("printing with recursion");
-list.printRec_reverse(list.head);
+// console.log("printing with recursion");
+// list.printRec_reverse(list.head);
 
 // console.log('\nReversing the list..')
 // list.reverse();

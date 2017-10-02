@@ -81,6 +81,27 @@ LinkedList.prototype.remove = function(val) {
   prev.next = curr.next;
 };
 
+LinkedList.prototype.removeAll = function(val){
+  if(this.isEmpty()){
+    console.log("nothing here");
+    return;
+  }
+
+  var current = this.head;
+  var prev = this.head;
+
+  while(current != null){
+    if(current.data == val){
+      prev.next = current.next;
+      current = prev.next;
+    }else{
+      prev = current;
+      current = current.next;
+    }
+    
+  }
+}
+
 LinkedList.prototype.reverse = function() {
   var current = this.head;
   var prev = null;
@@ -137,12 +158,12 @@ list.append(10);
 list.append(15);
 list.append(20);
 list.append(25);
-list.prepend(5);
+// list.prepend(5);
 list.print(); // [5, 10, 15, 20, 25]
-list.reverse();
-list.print();
-console.log(list.contains(10));
-console.log(list.isEmpty());
+// list.reverse();
+// list.print();
+// console.log(list.contains(10));
+// console.log(list.isEmpty());
 
 // console.log("printing with recursion");
 // list.printRec_reverse(list.head);

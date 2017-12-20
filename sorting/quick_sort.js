@@ -8,6 +8,7 @@ function QuickSort(array, start, end){
 	
 	//stop the recusive function if array is one element long
 	if(start >= end){
+		console.log("the start is: ", start, " and the end is: ", end)
 		return
 	}
 
@@ -30,7 +31,6 @@ function Partition(array, start, end){
 	var pivot = end;
 	
 	partition_index = start;
-
 
 	for(var i = start; i < pivot; i++){
 		// always checking if the next element is smaller than the pivot

@@ -9,7 +9,7 @@ function merge(left, right, array){
 	// a marks the position that needs to be filled
 	var l = 0, r = 0, a = 0;
 
-	// checking the sorted arrays to see which one should overirde the array
+	// checking the sorted arrays to see which one should over-ride the array
 	while(l < length_left && r < length_right){
 
 		if(left[l] <= right[r]){
